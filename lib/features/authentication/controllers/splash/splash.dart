@@ -1,5 +1,4 @@
 import 'dart:async';
-
 import 'package:foodhub/features/authentication/screens/onboarding/onboaring.dart';
 import 'package:get/get.dart';
 

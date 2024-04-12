@@ -6,6 +6,7 @@ class PColors {
   static const Color secondary = Color(0xFFDF2C2C);
   static const Color tertiary = Color(0xFF16674B);
   static const Color accent = Color(0xFF1CA572);
+  static const Color starColor = Color(0xFFFFC529);
 
   // --- Text Colors ---
   static const Color textPrimary = Color(0xFFFF460A);
@@ -18,6 +19,7 @@ class PColors {
   static const Color light = Color(0xFFF6F6F6);
   static const Color dark = Color(0xFF272727);
   static const Color primaryBackground = Color(0xFFF3F5FF);
+  static const Color containerColor = Color(0xFFF6F8FA);
 
   // Button colors
   static const Color buttonPrimary = Color(0xFF4b68ff);
@@ -29,7 +31,7 @@ class PColors {
   static const Color success = Color(0xFF388E3C);
   static const Color warning = Color(0xFFF57C00);
   static const Color info = Color(0xFF1976D2);
-  
+
   // Neutral Shades
   static const Color black = Color(0xFF232323);
   static const Color darkerGrey = Color(0xFF4F4F4F);

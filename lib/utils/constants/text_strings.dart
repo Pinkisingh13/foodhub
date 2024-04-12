@@ -1,7 +1,5 @@
-
 /// This class contains all the App Text in String formats.
 class PTexts {
-
   // -- GLOBAL Texts
   static const String and = "and";
   static const String skip = "Skip";
@@ -10,21 +8,18 @@ class PTexts {
   static const String appName = "FoodHub";
   static const String tContinue = "Continue";
 
-
-
   // -- OnBoarding Texts
-  static const String onBoardingTitle1 = "Choose your product";
-  static const String onBoardingTitle2 = "Select Payment Method";
-  static const String onBoardingTitle3 = "Deliver at your door step";
-
-  static const String onBoardingSubTitle1 = "Welcome to a World of Limitless Choices - Your Perfect Product Awaits!";
-  static const String onBoardingSubTitle2 = "For Seamless Transactions, Choose Your Payment Path - Your Convenience, Our Priority!";
-  static const String onBoardingSubTitle3 = "From Our Doorstep to Yours - Swift, Secure, and Contactless Delivery!";
-
+  static const String onBoardingTitle = "Welcome to ";
+  static const String onBoardingSubTitle =
+      "Your favourite foods delivered fast at your door.";
+  static const String onboardingDividerText = "Order from top restaurants";
+  static const String onBoardingButtonTitle = "Get Started";
 
   // -- Authentication Forms
-  static const String firstName = "First Name";
-  static const String lastName = "Last Name";
+  static const String fullName = "Full Name";
+  static const String google = "Google";
+  static const String facebook = "Facebook";
+
   static const String email = "E-Mail";
   static const String password = "Password";
   static const String newPassword = "New Password";
@@ -32,7 +27,7 @@ class PTexts {
   static const String phoneNo = "Phone Number";
   static const String rememberMe = "Remember Me";
   static const String forgetPassword = "Forget Password?";
-  static const String signIn = "Sign In";
+  static const String login = "Log in";
   static const String createAccount = "Create Account";
   static const String orSignInWith = "or sign in with";
   static const String orSignUpWith = "or sign up with";
@@ -43,28 +38,55 @@ class PTexts {
   static const String resendEmail = "Resend Email";
   static const String resendEmailIn = "Resend email in";
 
-
   // -- Authentication Headings
-  static const String loginTitle = "Welcome back,";
-  static const String loginSubTitle = "Discover Limitless Choices and Unmatched Convenience.";
-  static const String signupTitle = "Let’s create your account";
-  static const String forgetPasswordTitle = "Forget password";
-  static const String forgetPasswordSubTitle = "Don’t worry sometimes people can forget too, enter your email and we will send you a password reset link.";
-  static const String changeYourPasswordTitle = "Password Reset Email Sent";
-  static const String changeYourPasswordSubTitle = "Your Account Security is Our Priority! We've Sent You a Secure Link to Safely Change Your Password and Keep Your Account Protected.";
-  static const String confirmEmail = "Verify your email address!";
-  static const String confirmEmailSubTitle = "Congratulations! Your Account Awaits: Verify Your Email to Start Shopping and Experience a World of Unrivaled Deals and Personalized Offers.";
-  static const String emailNotReceivedMessage = "Didn’t get the email? Check your junk/spam or resend it.";
-  static const String yourAccountCreatedTitle = "Your account successfully created!";
-  static const String yourAccountCreatedSubTitle = "Welcome to Your Ultimate Shopping Destination: Your Account is Created, Unleash the Joy of Seamless Online Shopping!";
+  static const String loginTitle = "Log in";
+  static const String loginSubTitle = "Please sign in to your existing account";
+  static const String signupTitle = "Sign up";
+  static const String signupSubTitle = "Please sign up to get started";
 
+  static const String forgetPasswordTitle = "Forget password";
+  static const String forgetPasswordSubTitle =
+      "Please enter your email address to request a password reset";
+  static const String changeYourPasswordTitle = "Reset Password";
+  static const String changeYourPasswordSubTitle =
+      "Please enter your email address to request a password reset";
+  static const String confirmEmail = "Verify your email address!";
+  static const String confirmEmailSubTitle =
+      "Congratulations! Your Account Awaits: Verify Your Email to Start Shopping and Experience a World of Unrivaled Deals and Personalized Offers.";
+  static const String emailNotReceivedMessage =
+      "Didn’t get the email? Check your junk/spam or resend it.";
+  static const String yourAccountCreatedTitle =
+      "Your account successfully created!";
+  static const String yourAccountCreatedSubTitle =
+      "Welcome to Your Ultimate Shopping Destination: Your Account is Created, Unleash the Joy of Seamless Online Shopping!";
+
+  // --- Location
+  static const String locationTitle = "What's your location?";
+  static const String locationSubTitle =
+      "We need your location to show available restaurants & products.";
+  static const String allowLocationButton = "Allow location access";
+  static const String manualLocationButton = "Enter Location Manually";
+
+  // Notification
+  static const String notificationTitle = "Get updates on your order status";
+  static const String notificationSubTitle =
+      "Allow push notification to get real-time updates on your order status.";
+  static const String allowNotificationButton = "Turn on Notification";
+  static const String notNow = "Not Now";
 
   // -- Product
   static const String popularProducts = "Popular Products";
 
-  // -- Home
-  static const String homeAppbarTitle = "Good day for shopping";
-  static const String homeAppbarSubTitle = "Pinki  Singh";
+  // -- Bottom Navigation Menu
+  static const String home = "Home";
+  static const String wishilist = "Wishlist";
+
+//  Home
+  static const String homeTitle = "What would you like to order";
+  static const String categoryOfItemTitle = "What's on your Mind? ";
+  static const String categoryOfRestroTitle = "In the Spotlight ";
+
+  static const String searchBarTitle = "Find for food or restaurants...";
 
   PTexts(String onBoardingTitle1);
 }

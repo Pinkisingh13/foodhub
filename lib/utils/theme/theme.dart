@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:foodhub/utils/constants/colors.dart';
+import 'package:foodhub/utils/theme/widgets/textbutton_theme.dart';
 
 import 'widgets/appbar_theme.dart';
 import 'widgets/checkbox_theme.dart';
@@ -22,6 +23,7 @@ class PAppTheme {
     scaffoldBackgroundColor: PColors.white,
     appBarTheme: PAppBarTheme.lightAppBarTheme,
     checkboxTheme: PCheckboxTheme.lightCheckboxTheme,
+    textButtonTheme: PTextButtonTheme.lightTextButtonTheme,
     elevatedButtonTheme: PElevatedButtonTheme.lightElevatedButtonTheme,
     outlinedButtonTheme: POutlinedButtonTheme.lightOutlinedButtonTheme,
     inputDecorationTheme: PTextFormFieldTheme.lightInputDecorationTheme,

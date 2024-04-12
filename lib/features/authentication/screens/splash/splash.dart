@@ -1,19 +1,14 @@
-import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:foodhub/utils/constants/colors.dart';
 import 'package:foodhub/utils/constants/image_strings.dart';
 import 'package:foodhub/utils/constants/sizes.dart';
 import 'package:foodhub/utils/device/device_utility.dart';
-import 'package:get/get.dart';
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-
-    
     return Scaffold(
       backgroundColor: PColors.primary,
       body: Column(
