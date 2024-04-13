@@ -49,7 +49,7 @@ class SearchScreen extends StatelessWidget {
               const SizedBox(
                 height: PSizes.spaceBtwSections,
               ),
-              Container(
+              SizedBox(
                 child: Column(
                   children: [
                     const RowTitleWithDivider(title: "Popular Cuisins"),

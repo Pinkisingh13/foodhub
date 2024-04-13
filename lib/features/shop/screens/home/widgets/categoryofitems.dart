@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:foodhub/common/widgets/column_image/itemlist.dart';
 import 'package:foodhub/common/widgets/row_title_divider/row_titlewith_divider.dart';
-import 'package:foodhub/utils/constants/colors.dart';
 import 'package:foodhub/utils/constants/image_strings.dart';
 import 'package:foodhub/utils/constants/sizes.dart';
 import 'package:foodhub/utils/constants/text_strings.dart';
@@ -32,10 +31,10 @@ class PCategoryOfItems extends StatelessWidget {
             children: [
               PItemsList(
                 fn1: () {
-                  print("first");
+                  
                 },
                 fn2: () {
-                  print("second");
+              
                 },
                 image1: PImages.productImage1,
                 image2: PImages.productImage2,

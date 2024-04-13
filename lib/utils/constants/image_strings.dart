@@ -54,8 +54,8 @@ class PImages {
  static const String restroImage1 = "assets/images/restro/Bercos.png";
     static const String restroImage2 = "assets/images/restro/CafeOctober.png";
     static const String restroImage3 = "assets/images/restro/CygnettParkMeghna.png";
-    static const String restroImage4 = "assets/images/restro/Dominos.png";
-    static const String restroImage5 = "assets/images/restro/FernsNPetalspng";
+    static const String restroImage4 = "assets/images/restro/dominos.png";
+    static const String restroImage5 = "assets/images/restro/FernsNPetals.png";
     static const String restroImage6 = "assets/images/restro/gunjan.png";
     static const String restroImage7 = "assets/images/restro/KFC.png";
     static const String restroImage8 = "assets/images/restro/LazizPizza.png";
@@ -73,6 +73,10 @@ class PImages {
     static const String settingIcon = "assets/images/icons/setting.png";
     static const String userReviewIcon = "assets/images/icons/user_review.png";
     static const String wishlistIcon = "assets/images/icons/wishlist.png";
+
+   /// Restaurant Screen 
+    // static const String menuIcon = "assets/images/menu2.png";
+
 
 
   // -- Animations

@@ -71,6 +71,12 @@ flutter:
     - assets/images/
     - assets/images/restro/
     - assets/images/foods/
+    - assets/images/KFC/
+    - assets/images/Berco/
+    - assets/images/Dominos/
+    - assets/images/Rendezvous/
+    - assets/images/LazizPizza/
+    - assets/images/Jahnabee/
     - assets/logos/
     - assets/animation/
     - assets/images/icons/
