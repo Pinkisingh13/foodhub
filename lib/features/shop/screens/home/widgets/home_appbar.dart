@@ -30,6 +30,19 @@ class HomeAppbar extends StatelessWidget implements PreferredSizeWidget {
           ),
         ],
       ),
+      leading: Builder(
+        builder: (context) {
+          return Padding(
+            padding: const EdgeInsets.only(left: PSizes.xs),
+            child: IconButton(
+              onPressed: () => Scaffold.of(context).openDrawer(),
+              icon: const Image(
+                image: AssetImage(PImages.drawerImage),
+              ),
+            ),
+          );
+        },
+      ),
       actions: [
         Container(
           margin: const EdgeInsets.only(right: PSizes.md),
@@ -50,8 +63,7 @@ class HomeAppbar extends StatelessWidget implements PreferredSizeWidget {
       ],
     );
   }
-  
+
   @override
   Size get preferredSize => Size.fromHeight(PDeviceUtils.getAppBarHeight());
 }
-

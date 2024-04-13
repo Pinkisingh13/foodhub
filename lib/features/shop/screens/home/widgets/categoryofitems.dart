@@ -17,39 +17,56 @@ class PCategoryOfItems extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const RowTitleWithDivider(title: PTexts.categoryOfItemTitle,),
+        const RowTitleWithDivider(
+          title: PTexts.categoryOfItemTitle,
+        ),
         const SizedBox(
           height: PSizes.spaceBtwItems,
         ),
-    
+
         // Items ---
         SizedBox(
-          
           height: 250,
           child: ListView(
             scrollDirection: Axis.horizontal,
-            children: const [
+            children: [
               PItemsList(
+                fn1: () {
+                  print("first");
+                },
+                fn2: () {
+                  print("second");
+                },
                 image1: PImages.productImage1,
                 image2: PImages.productImage2,
               ),
               PItemsList(
+                fn1: () {},
+                fn2: () {},
                 image1: PImages.productImage3,
                 image2: PImages.productImage4,
               ),
               PItemsList(
+                fn1: () {},
+                fn2: () {},
                 image1: PImages.productImage5,
                 image2: PImages.productImage6,
               ),
               PItemsList(
+                fn1: () {},
+                fn2: () {},
                 image1: PImages.productImage7,
                 image2: PImages.productImage8,
               ),
               PItemsList(
+                fn1: () {},
+                fn2: () {},
                 image1: PImages.productImage9,
                 image2: PImages.productImage10,
               ),
               PItemsList(
+                fn1: () {},
+                fn2: () {},
                 image1: PImages.productImage11,
                 image2: PImages.productImage2,
               ),
@@ -60,4 +77,3 @@ class PCategoryOfItems extends StatelessWidget {
     );
   }
 }
-

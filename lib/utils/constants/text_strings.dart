@@ -88,5 +88,10 @@ class PTexts {
 
   static const String searchBarTitle = "Find for food or restaurants...";
 
+
+  /// Search
+  static const String searchScreenTitle = "Search for dishes and restaurants";
+  
+
   PTexts(String onBoardingTitle1);
 }

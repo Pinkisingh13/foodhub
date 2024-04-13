@@ -14,6 +14,7 @@ class PColors {
   static const Color textWhite = Colors.white;
   static const Color textBlack = Color(0xFF333333);
   static const Color textGrey = Color(0xFF6C757D);
+  static const Color textDrawer = Color(0xFF32343E);
 
   // Background colors
   static const Color light = Color(0xFFF6F6F6);

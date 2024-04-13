@@ -38,20 +38,19 @@ class PImages {
     static const String cartImage = "assets/logos/cart.png";
 
 // Product Images
-    static const String productImage1 = "assets/images/Biryani_2.png";
-    static const String productImage2 = "assets/images/Chinese.png";
-    static const String productImage3 = "assets/images/Chole_Bature.png";
-    static const String productImage4 = "assets/images/Desserts_2.png";
-    static const String productImage5 = "assets/images/north_indian_1.png";
-    static const String productImage6 = "assets/images/Gulab_Jamun.png";
-    static const String productImage7 = "assets/images/Paratha.png";
-    static const String productImage8 = "assets/images/Pastry.png";
-    static const String productImage9 = "assets/images/Pizza.png";
-    static const String productImage10 = "assets/images/Pure_Veg.png";
-    static const String productImage11 = "assets/images/Rolls.png";
+    static const String productImage1 = "assets/images/foods/Biryani_2.png";
+    static const String productImage2 = "assets/images/foods/Chinese.png";
+    static const String productImage3 = "assets/images/foods/Chole_Bature.png";
+    static const String productImage4 = "assets/images/foods/Desserts_2.png";
+    static const String productImage5 = "assets/images/foods/north_indian_1.png";
+    static const String productImage6 = "assets/images/foods/Gulab_Jamun.png";
+    static const String productImage7 = "assets/images/foods/Paratha.png";
+    static const String productImage8 = "assets/images/foods/Pastry.png";
+    static const String productImage9 = "assets/images/foods/Pizza.png";
+    static const String productImage10 = "assets/images/foods/Pure_Veg.png";
+    static const String productImage11 = "assets/images/foods/Rolls.png";
 
-  // Restraunt Image
-
+  // Restaurant Image
  static const String restroImage1 = "assets/images/restro/Bercos.png";
     static const String restroImage2 = "assets/images/restro/CafeOctober.png";
     static const String restroImage3 = "assets/images/restro/CygnettParkMeghna.png";
@@ -63,6 +62,17 @@ class PImages {
     static const String restroImage9 = "assets/images/restro/rendezvous.png";
 
 
+// Drawer Icons
+ static const String addressIcon = "assets/images/icons/address.png";
+    static const String cartIconIcon = "assets/images/icons/cart.png";
+    static const String fNqIcon = "assets/images/icons/fnq.png";
+    static const String logoutIcon = "assets/images/icons/logout.png";
+    static const String notificationIcon = "assets/images/icons/notification.png";
+    static const String paymentIcon = "assets/images/icons/payment.png";
+    static const String personIcon = "assets/images/icons/person.png";
+    static const String settingIcon = "assets/images/icons/setting.png";
+    static const String userReviewIcon = "assets/images/icons/user_review.png";
+    static const String wishlistIcon = "assets/images/icons/wishlist.png";
 
 
   // -- Animations
