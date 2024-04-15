@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:foodhub/features/shop/screens/cart/cart.dart';
 import 'package:foodhub/utils/constants/colors.dart';
 import 'package:foodhub/utils/constants/image_strings.dart';
 import 'package:foodhub/utils/constants/sizes.dart';
 import 'package:foodhub/utils/device/device_utility.dart';
+import 'package:get/get.dart';
 
 class HomeAppbar extends StatelessWidget implements PreferredSizeWidget {
   const HomeAppbar({
@@ -54,7 +56,9 @@ class HomeAppbar extends StatelessWidget implements PreferredSizeWidget {
           ),
           child: InkWell(
             borderRadius: BorderRadius.circular(60),
-            onTap: () {},
+            onTap: () {
+              Get.to(() => const CartScreen());
+            },
             child: const Image(
               image: AssetImage(PImages.cartImage),
             ),

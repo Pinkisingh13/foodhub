@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:foodhub/drawer/widgets/drawer_container.dart';
 import 'package:foodhub/drawer/widgets/drawer_element.dart';
+import 'package:foodhub/drawer/widgets/drawer_header.dart';
+import 'package:foodhub/features/personalization/screens/profile/profile.dart';
+import 'package:foodhub/features/shop/screens/wishlist/wishlist.dart';
 import 'package:foodhub/utils/constants/colors.dart';
 import 'package:foodhub/utils/constants/image_strings.dart';
 import 'package:get/get.dart';
@@ -16,29 +19,12 @@ class MainDrawer extends StatelessWidget {
       child: ListView(
         padding: EdgeInsets.zero,
         children: [
-          DrawerHeader(
-            decoration: const BoxDecoration(
+          const DrawerHeader(
+            decoration: BoxDecoration(
               color: PColors.white,
             ),
-            child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  const SizedBox(
-                    height: 100,
-                    width: 100,
-                    child: CircleAvatar(
-                      child: Image(
-                        image: AssetImage(PImages.appLogo),
-                      ),
-                    ),
-                  ),
-                  Text(
-                    "Pinki Singh",
-                    style: Theme.of(context).textTheme.headlineMedium,
-                  ),
-                ],
-              ),
-            ),
+            child: DrawerHeaderText(),
+          ),
           DrawerContainer(
             height: 100,
             children: [
@@ -46,6 +32,8 @@ class MainDrawer extends StatelessWidget {
                 onTap: () {
                   controller.changeIndex(0);
                   Get.back();
+                  Get.to(
+                      () => controller.screens[controller.selectedIndex.value]);
                 },
                 image: PImages.personIcon,
                 title: "Personal Info",
@@ -61,64 +49,29 @@ class MainDrawer extends StatelessWidget {
             ],
           ),
           DrawerContainer(
-            height: 200,
+            height: 150,
             children: [
               PDrawerElement(
                 onTap: () {
                   controller.changeIndex(2);
                   Get.back();
-                },
-                image: PImages.cartIconIcon,
-                title: "Cart",
-              ),
-              PDrawerElement(
-                onTap: () {
-                  controller.changeIndex(3);
-                  Get.back();
+                   Get.to(
+                      () => controller.screens[controller.selectedIndex.value]);
                 },
                 image: PImages.wishlistIcon,
                 title: "Wishlist",
               ),
               PDrawerElement(
                 onTap: () {
-                  controller.changeIndex(4);
-                  Get.back();
-                },
-                image: PImages.notificationIcon,
-                title: "Notifications",
-              ),
-              PDrawerElement(
-                onTap: () {
-                  controller.changeIndex(5);
+                  controller.changeIndex(3);
                   Get.back();
                 },
                 image: PImages.paymentIcon,
                 title: "Payment Method",
               ),
-            ],
-          ),
-          DrawerContainer(
-            height: 150,
-            children: [
               PDrawerElement(
                 onTap: () {
-                  controller.changeIndex(6);
-                  Get.back();
-                },
-                image: PImages.fNqIcon,
-                title: "FAQs",
-              ),
-              PDrawerElement(
-                onTap: () {
-                  controller.changeIndex(7);
-                  Get.back();
-                },
-                image: PImages.userReviewIcon,
-                title: "User Reviews",
-              ),
-              PDrawerElement(
-                onTap: () {
-                  controller.changeIndex(8);
+                  controller.changeIndex(4);
                   Get.back();
                 },
                 image: PImages.settingIcon,
@@ -127,12 +80,15 @@ class MainDrawer extends StatelessWidget {
             ],
           ),
           DrawerContainer(
-            height: 60,
+            height: 100,
             children: [
               PDrawerElement(
                 image: PImages.logoutIcon,
                 title: "Log out",
-                onTap: () {},
+                onTap: () {
+                  controller.changeIndex(5);
+                  // Log out
+                },
               ),
             ],
           ),
@@ -144,8 +100,7 @@ class MainDrawer extends StatelessWidget {
 
 
 
-
-//  Drawer Controller 
+//  Drawer Controller
 class MainDrawerController extends GetxController {
   final RxInt selectedIndex = 0.obs;
 
@@ -153,12 +108,8 @@ class MainDrawerController extends GetxController {
     selectedIndex.value = value;
   }
 
-  // final screens = [
-  //   Container(
-  //     color: Colors.blue,
-  //   ),
-  //   Container(
-  //     color: Colors.red,
-  //   )
-  // ];
+  final screens = [
+    const ProfileScreen(),
+    const WishlistScreen(),
+  ];
 }

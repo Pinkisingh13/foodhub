@@ -5,10 +5,14 @@ import 'package:foodhub/utils/constants/colors.dart';
 class RatingAndTime extends StatelessWidget {
   const RatingAndTime({
     super.key,
-    required this.e,
+    this.e,
+    this.foodModel,
+    this.showFoodModel = false,
   });
 
-  final RestaurantModel e;
+  final RestaurantModel? e;
+  final FoodModel? foodModel;
+  final bool showFoodModel;
 
   @override
   Widget build(BuildContext context) {
@@ -19,8 +23,9 @@ class RatingAndTime extends StatelessWidget {
         children: [
           Container(
             decoration: BoxDecoration(
-                color: PColors.tertiary,
-                borderRadius: BorderRadius.circular(40)),
+              color: PColors.tertiary,
+              borderRadius: BorderRadius.circular(40),
+            ),
             height: 15,
             width: 15,
             child: const Icon(
@@ -32,10 +37,11 @@ class RatingAndTime extends StatelessWidget {
 
           // Rating ---
           Text(
-            e.rating,
-              style: Theme.of(context)
-                .textTheme
-                .bodyLarge!.copyWith(color: PColors.black, fontSize: 13)
+           showFoodModel ?  e!.rating : "4.3",
+            style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                  color: PColors.black,
+                  fontSize: 13,
+                ),
           ),
 
           /// Dot ---
@@ -48,11 +54,11 @@ class RatingAndTime extends StatelessWidget {
 
           // Time
           Text(
-            e.time,
+           showFoodModel ? e!.time : "20-25 mins",
             style: Theme.of(context)
                 .textTheme
                 .bodyMedium!
-                .copyWith(color: PColors.black, fontSize: 12 ),
+                .copyWith(color: PColors.black, fontSize: 12),
           ),
         ],
       ),

@@ -12,7 +12,7 @@ class RestaurantCategoeyItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: 120,
+      // width: 110,
       child: SizedBox(
         width: double.infinity, // Set a maximum width for the container
         child: Row(

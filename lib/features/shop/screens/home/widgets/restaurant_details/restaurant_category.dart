@@ -14,6 +14,7 @@ class CategoryOfRestaurantDetails extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       width: 150,
+      
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [

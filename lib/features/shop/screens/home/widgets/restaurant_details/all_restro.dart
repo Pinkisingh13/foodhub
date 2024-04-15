@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:foodhub/common/widgets/row_title_divider/row_titlewith_divider.dart';
 import 'package:foodhub/features/shop/models/restaurant/restaurant.dart';
 import 'package:foodhub/features/shop/screens/home/widgets/cliprect_container_image.dart';
@@ -25,36 +26,35 @@ class PAllRestaurants extends StatelessWidget {
         /// --- List of Restaurants ---
         SizedBox(
           height: 230,
-          child: ListView(
+          child: ListView.builder(
             scrollDirection: Axis.horizontal,
-            shrinkWrap: true,
-            children: [
-              /// Restraunt Name, rating, time, category..
-              ...restaurantDetails.map(
-                (e) => GestureDetector(
-                  onTap: () {
-                    Get.to(() => RestaurantViewScreen(
-                          element: e,
-                        ));
-                  },
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      /// --- Image ---
-                      ClipRectContainerImage(
-                        image: e.image,
-                      ),
+            itemCount: 5,
+            itemBuilder: (context, index) {
+              return GestureDetector(
+                onTap: () {
+                  Get.to(
+                    () => RestaurantViewScreen(
+                      e: restaurantDetails[index],
+                    ),
+                  );
+                },
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    /// --- Image ---
+                    ClipRectContainerImage(
+                      image: restaurantDetails[index].image,
+                    ),
 
-                      /// --- Restaurant Details ---
-                      CategoryOfRestaurantDetails(
-                        e: e,
-                      ),
-                    ],
-                  ),
+                    /// --- Restaurant Details ---
+                    CategoryOfRestaurantDetails(
+                      e: restaurantDetails[index],
+                    ),
+                  ],
                 ),
-              ),
-            ],
+              );
+            },
           ),
         ),
       ],

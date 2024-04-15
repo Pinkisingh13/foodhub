@@ -1,17 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:foodhub/features/shop/models/restaurant/restaurant.dart';
-import 'package:foodhub/features/shop/screens/home/widgets/cliprect_container_image.dart';
+import 'package:foodhub/features/shop/screens/restaurant_view/widgets/all_food_list.dart';
+import 'package:foodhub/features/shop/screens/restaurant_view/widgets/rating_time_delievery_row.dart';
+import 'package:foodhub/common/widgets/container/restaurant_image_container.dart';
+import 'package:foodhub/features/shop/screens/restaurant_view/widgets/row_text_divider.dart';
 import 'package:foodhub/utils/constants/colors.dart';
-import 'package:foodhub/utils/constants/image_strings.dart';
 import 'package:foodhub/utils/constants/sizes.dart';
 
 class RestaurantViewScreen extends StatelessWidget {
-  const RestaurantViewScreen({super.key, required this.element});
+  const RestaurantViewScreen({super.key, required this.e});
 
-  final RestaurantModel element;
+  final RestaurantModel e;
 
   @override
   Widget build(BuildContext context) {
+    final filteredList =
+        foodList.where((element) => element.id == e.id).toList();
     return Scaffold(
       appBar: AppBar(
         actions: [
@@ -35,68 +39,22 @@ class RestaurantViewScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Container(
-                height: 240,
-                decoration: BoxDecoration(
-                    color: PColors.primary,
-                    borderRadius: BorderRadius.circular(20)),
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(20),
-                  child: Image(
-                    image: AssetImage(element.image),
-                    // height: 200,
-                    width: double.infinity,
-                    fit: BoxFit.cover,
-                  ),
-                ),
-              ),
+
+              //  --- Restaurant Image ---
+              PRestaurantImageContainer(image: e.image,),
               const SizedBox(
                 height: PSizes.spaceBtwItems,
               ),
-              Row(
-                children: [
-                  Row(
-                    children: [
-                      const Icon(
-                        Icons.star_border_outlined,
-                        color: PColors.primary,
-                      ),
-                      Text(element.rating),
-                    ],
-                  ),
-                  const SizedBox(
-                    width: PSizes.spaceBtwItems,
-                  ),
-                  Row(
-                    children: [
-                      const Icon(
-                        Icons.av_timer,
-                        color: PColors.primary,
-                      ),
-                      Text(element.time),
-                    ],
-                  ),
-                  const SizedBox(
-                    width: PSizes.spaceBtwItems,
-                  ),
-                  const Row(
-                    children: [
-                      Icon(
-                        Icons.delivery_dining_rounded,
-                        color: PColors.primary,
-                      ),
-                      Text(
-                        "Free",
-                      ),
-                    ],
-                  ),
-                ],
-              ),
+
+              /// --- Rating, Time and delievery ---
+              RatingTimeDelievery(rating: e.rating, time: e.time,),
               const SizedBox(
                 height: PSizes.spaceBtwItems,
               ),
+
+              /// Title 
               Text(
-                element.name,
+                e.name,
                 style: Theme.of(context)
                     .textTheme
                     .titleLarge!
@@ -105,6 +63,8 @@ class RestaurantViewScreen extends StatelessWidget {
               const SizedBox(
                 height: PSizes.spaceBtwItems,
               ),
+
+              /// Restaurant Description
               Text(
                 "Maecenas sed diam eget risus varius blandit sit amet non magna. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.",
                 style: Theme.of(context)
@@ -115,33 +75,13 @@ class RestaurantViewScreen extends StatelessWidget {
               const SizedBox(
                 height: PSizes.spaceBtwSections,
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  const Expanded(
-                      child: Divider(
-                    color: PColors.primary,
-                    height: 3,
-                    endIndent: 20,
-                  ),),
-                  Text(
-                    "MENU",
-                    style: Theme.of(context)
-                        .textTheme
-                        .titleLarge!
-                        .copyWith(color: PColors.darkGrey, letterSpacing: 3),
-                  ),
-                  const Expanded(
-                    child: Divider(
-                      indent: 20,
-                      color: PColors.primary,
-                      height: 3,
-                    ),
-                  ),
-                ],
-              ),
 
-              // All Restaurant Items
+              /// --- Menu Heading ---
+              const PRowTextWithDivider(),
+              const SizedBox(height: PSizes.spaceBtwSections),
+
+              /// All food items in Restaurant 
+              PAllFoodList(filteredList: filteredList),
             ],
           ),
         ),
@@ -149,3 +89,4 @@ class RestaurantViewScreen extends StatelessWidget {
     );
   }
 }
+

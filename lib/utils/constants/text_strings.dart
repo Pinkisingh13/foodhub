@@ -89,23 +89,29 @@ class PTexts {
 
   // Restaurant Details
   static const String restaurantName1 = "Berco's - If You Love Chinese";
-  static const String restaurantName2 = "Kachari Kingdom";
-  static const String restaurantName3 = "Crossroad";
-  static const String restaurantName4 = "Laziz Pizza";
-  static const String restaurantName5 = "Cafe OKtober";
-  static const String restaurantName6 = "Delish Restaurant";
-  static const String restaurantName7 = "Nirmal Hotel";
-  static const String restaurantName8 = "KFC";
-  static const String restaurantName9 = "Domino's Pizza";
+  static const String restaurantName2 = "Cafe OKtober";
+  static const String restaurantName3 = "Rendezvous Restaurant";
+  static const String restaurantName4 = "Domino's Pizza";
+  static const String restaurantName5 = "KFC";
+  
+  // Another List
+  static const String restaurantName6 = "Gunjan";
+  static const String restaurantName7 = "Ferns N Petals";
+  static const String restaurantName8 = "Laziz Pizza";
+  static const String restaurantName9 = "Cygnett Park Meghna";
   static const String restaurantName10 = "BB's Food Plaza";
   static const String restaurantName11 = "Purple Turtle";
-  static const String restaurantName12 = "Ferns N Petals";
+  static const String restaurantName12 = "Kachari Kingdom";
   static const String restaurantName13 = "Jahnabee Regency";
   static const String restaurantName14 = "Cake Heaven";
   static const String restaurantName15 = "Shawarma Capital";
-  static const String restaurantName16 = "Hotel Street Food";
+  static const String restaurantName16 = "The Belgian Waffle Co.";
   static const String restaurantName17 = "Jollydine";
-  static const String restaurantName18 = "Rendezvous Restaurant";
+  static const String restaurantName18 = "Nirmal Hotel";
+  static const String restaurantName19 = "Crossroad";
+  static const String restaurantName20 = "Delish Restaurant";
+
+
 
 
 

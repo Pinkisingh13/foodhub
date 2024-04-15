@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:foodhub/common/widgets/row_title_divider/row_titlewith_divider.dart';
 import 'package:foodhub/features/shop/controllers/searchbar/search_controller.dart';
 import 'package:foodhub/drawer/main_drawer.dart';
+import 'package:foodhub/features/shop/models/restaurant/restaurant.dart';
+import 'package:foodhub/features/shop/screens/home/widgets/cliprect_container_image.dart';
 import 'package:foodhub/features/shop/screens/home/widgets/restaurant_details/all_restro.dart';
+import 'package:foodhub/features/shop/screens/home/widgets/restaurant_details/rating_time.dart';
 import 'package:foodhub/features/shop/screens/restaurant_view/restaurant_details.dart';
 import 'package:foodhub/features/shop/screens/search/search.dart';
 import 'package:foodhub/utils/constants/colors.dart';
@@ -66,9 +70,51 @@ class HomeScreen extends StatelessWidget {
               ),
 
               /// Category of restaurants
-              PAllRestaurants(
-          
+              const PAllRestaurants(),
+              const SizedBox(
+                height: PSizes.spaceBtwSections,
               ),
+              /// Heading
+              RowTitleWithDivider(title: "Featured Restaurant"),
+                            const SizedBox(
+                height: PSizes.spaceBtwItems,
+              ),
+              /// Restaurant List
+              for (final item in restaurantDetails)
+                Padding(
+                  padding:
+                      const EdgeInsets.only(bottom: PSizes.spaceBtwSections),
+                  child: InkWell(
+                    onTap: () {
+                      Get.to( () => RestaurantViewScreen(e: item));
+                    },
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        ClipRectContainerImage(image: item.image),
+                        SizedBox(
+                          width: 150,
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                softWrap: true,
+                                item.name,
+                              ),
+
+                              // Rating And time row
+                              const RatingAndTime(),
+
+                              // Category
+                              Text(item.category.join(", ")),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
             ],
           ),
         ),
