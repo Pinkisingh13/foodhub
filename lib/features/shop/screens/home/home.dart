@@ -74,11 +74,13 @@ class HomeScreen extends StatelessWidget {
               const SizedBox(
                 height: PSizes.spaceBtwSections,
               ),
+
               /// Heading
-              RowTitleWithDivider(title: "Featured Restaurant"),
-                            const SizedBox(
+              const RowTitleWithDivider(title: "Featured Restaurant"),
+              const SizedBox(
                 height: PSizes.spaceBtwItems,
               ),
+
               /// Restaurant List
               for (final item in restaurantDetails)
                 Padding(
@@ -86,7 +88,7 @@ class HomeScreen extends StatelessWidget {
                       const EdgeInsets.only(bottom: PSizes.spaceBtwSections),
                   child: InkWell(
                     onTap: () {
-                      Get.to( () => RestaurantViewScreen(e: item));
+                      Get.to(() => RestaurantViewScreen(e: item));
                     },
                     child: Row(
                       crossAxisAlignment: CrossAxisAlignment.center,

@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:foodhub/drawer/widgets/drawer_container.dart';
 import 'package:foodhub/drawer/widgets/drawer_element.dart';
 import 'package:foodhub/drawer/widgets/drawer_header.dart';
+import 'package:foodhub/features/personalization/screens/address/address.dart';
 import 'package:foodhub/features/personalization/screens/profile/profile.dart';
+import 'package:foodhub/features/shop/screens/payment/payment.dart';
 import 'package:foodhub/features/shop/screens/wishlist/wishlist.dart';
 import 'package:foodhub/utils/constants/colors.dart';
 import 'package:foodhub/utils/constants/image_strings.dart';
@@ -42,6 +44,8 @@ class MainDrawer extends StatelessWidget {
                 onTap: () {
                   controller.changeIndex(1);
                   Get.back();
+                  Get.to(
+                      () => controller.screens[controller.selectedIndex.value]);
                 },
                 image: PImages.addressIcon,
                 title: "Adresses",
@@ -55,7 +59,7 @@ class MainDrawer extends StatelessWidget {
                 onTap: () {
                   controller.changeIndex(2);
                   Get.back();
-                   Get.to(
+                  Get.to(
                       () => controller.screens[controller.selectedIndex.value]);
                 },
                 image: PImages.wishlistIcon,
@@ -65,6 +69,7 @@ class MainDrawer extends StatelessWidget {
                 onTap: () {
                   controller.changeIndex(3);
                   Get.back();
+                  Get.to(()=> controller.screens[controller.selectedIndex.value]);
                 },
                 image: PImages.paymentIcon,
                 title: "Payment Method",
@@ -98,8 +103,6 @@ class MainDrawer extends StatelessWidget {
   }
 }
 
-
-
 //  Drawer Controller
 class MainDrawerController extends GetxController {
   final RxInt selectedIndex = 0.obs;
@@ -110,6 +113,8 @@ class MainDrawerController extends GetxController {
 
   final screens = [
     const ProfileScreen(),
+    const UserAddressScreen(),
     const WishlistScreen(),
+   const  PaymentScreen(),
   ];
 }

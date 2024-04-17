@@ -13,50 +13,40 @@ class ProfileScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text("Profile"),
         centerTitle: true,
-        actions: [
-          TextButton(
-            onPressed: () {},
-            child: const Row(
-              children: [
-                Icon(
-                  Icons.edit,
-                  size: 15,
-                ),
-                Text("edit"),
-              ],
-            ),
-          ),
-        ],
       ),
-      body: const Padding(
-        padding: EdgeInsets.all(PSizes.defaultSpace),
+      body:  Padding(
+        padding: const EdgeInsets.all(PSizes.defaultSpace),
         child: Column(
           children: [
-            DrawerHeaderText(),
-            SizedBox(
+            const DrawerHeaderText(),
+            const SizedBox(
               height: PSizes.spaceBtwItems,
             ),
-            Divider(),
-            SizedBox(
+            const Divider(),
+            const SizedBox(
               height: PSizes.spaceBtwSections,
             ),
             PProfileMenu(
               title: PTexts.fullName,
               value: "Pinki singh",
+              onPressed: (){},
+              
             ),
-            SizedBox(
+            const SizedBox(
               height: PSizes.spaceBtwItems,
             ),
             PProfileMenu(
               title: PTexts.phoneNo,
               value: "8402399876",
+              onPressed: (){},
             ),
-            SizedBox(
+            const SizedBox(
               height: PSizes.spaceBtwItems,
             ),
             PProfileMenu(
               title: PTexts.email,
               value: "web.pinkisingh@gmail.com",
+              onPressed: (){},
             ),
           ],
         ),
