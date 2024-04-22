@@ -1,7 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:foodhub/common/widgets/success_screen/success_screen.dart';
-import 'package:foodhub/features/authentication/screens/login/login.dart';
+
+import 'package:foodhub/data/repositories/authentication/authentication.dart';
+import 'package:foodhub/features/authentication/controllers/signup/verify_email_controller.dart';
+
 import 'package:foodhub/utils/constants/image_strings.dart';
 import 'package:foodhub/utils/constants/sizes.dart';
 import 'package:foodhub/utils/constants/text_strings.dart';
@@ -14,13 +16,14 @@ class VerifyEmailScreen extends StatelessWidget {
   final String? email;
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(VerifyEmailController());
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
         actions: [
           IconButton(
             onPressed: () {
-              Get.back();
+              AuthenticationRepo.instance.logout();
             },
             icon: const Icon(CupertinoIcons.clear),
           ),
@@ -72,15 +75,7 @@ class VerifyEmailScreen extends StatelessWidget {
                 width: double.infinity,
                 child: ElevatedButton(
                   onPressed: () {
-                    Get.to(
-                      () => SuccessScreen(
-                          image: PImages.successfullyRegisterAnimation,
-                          title: PTexts.yourAccountCreatedTitle,
-                          subTitle: PTexts.yourAccountCreatedSubTitle,
-                          onPressed: () {
-                            Get.offAll(() => const LoginScreen());
-                          }),
-                    );
+                    controller.checkEmailVerificationStatusManually();
                   },
                   child: const Text(PTexts.tContinue),
                 ),
@@ -91,7 +86,9 @@ class VerifyEmailScreen extends StatelessWidget {
               SizedBox(
                 width: double.infinity,
                 child: TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    controller.sendEmailVerification();
+                  },
                   child: const Text(PTexts.resendEmail),
                 ),
               ),

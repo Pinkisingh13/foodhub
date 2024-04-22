@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:foodhub/features/shop/models/restaurant/restaurant.dart';
 import 'package:foodhub/utils/constants/colors.dart';
 import 'package:foodhub/utils/constants/image_strings.dart';
@@ -7,7 +6,9 @@ import 'package:foodhub/utils/constants/sizes.dart';
 import 'package:foodhub/utils/helpers/helper_functions.dart';
 
 class PaymentScreen extends StatelessWidget {
-  const PaymentScreen({super.key});
+  const PaymentScreen({super.key, this.isShowBottomMenu = true });
+
+  final bool isShowBottomMenu;
 
   @override
   Widget build(BuildContext context) {
@@ -21,8 +22,7 @@ class PaymentScreen extends StatelessWidget {
             padding: const EdgeInsets.all(PSizes.defaultSpace),
             child: Column(
               children: [
-                Container(
-                  // color: PColors.primary,
+                SizedBox(
                   height: 100,
                   child: ListView(
                     shrinkWrap: true,
@@ -106,22 +106,29 @@ class PaymentScreen extends StatelessWidget {
                     ),
                   ),
                 ),
-                const SizedBox(height: PSizes.spaceBtwSections,),
+                const SizedBox(
+                  height: PSizes.spaceBtwSections,
+                ),
               ],
             ),
           ),
         ),
       ),
-      bottomNavigationBar: Container(
-        height:150,
-        decoration:
-            const BoxDecoration(color: Color.fromARGB(255, 230, 240, 250), borderRadius: BorderRadius.only(topLeft: Radius.circular(30), topRight: Radius.circular(30))),
+      bottomNavigationBar: isShowBottomMenu ?  Container(
+        height: 150,
+        decoration: const BoxDecoration(
+            color: Color.fromARGB(255, 230, 240, 250),
+            borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(30), topRight: Radius.circular(30))),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            Text("Total: ${foodList[0].price}", style: Theme.of(context).textTheme.titleMedium,),
+            Text(
+              "Total: ${foodList[0].price}",
+              style: Theme.of(context).textTheme.titleMedium,
+            ),
             SizedBox(
-              width: PHelperFunctions.screenHeight()/3,
+              width: PHelperFunctions.screenHeight() / 3,
               child: ElevatedButton(
                 onPressed: () {},
                 child: const Text("Pay and Confirm"),
@@ -129,7 +136,7 @@ class PaymentScreen extends StatelessWidget {
             ),
           ],
         ),
-      ),
+      ) : const SizedBox(),
     );
   }
 }

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:foodhub/features/authentication/screens/signup/signup.dart';
+import 'package:foodhub/features/authentication/controllers/onborading/onboarding_controller.dart';
 import 'package:foodhub/utils/constants/image_strings.dart';
 import 'package:get/get.dart';
 import 'widgets/divider_button.dart';
@@ -10,6 +10,7 @@ class OnBoardingScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(OnboardingController());
     return Scaffold(
       body: Stack(
         children: [
@@ -42,7 +43,7 @@ class OnBoardingScreen extends StatelessWidget {
           /// --- Divider & Button ---
           DividerAndButton(
             onTap: () {
-              Get.to(()=> const Signup());
+              controller.onTap();
             },
           ),
         ],

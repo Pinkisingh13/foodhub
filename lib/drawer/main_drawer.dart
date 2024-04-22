@@ -3,6 +3,7 @@ import 'package:foodhub/drawer/widgets/drawer_container.dart';
 import 'package:foodhub/drawer/widgets/drawer_element.dart';
 import 'package:foodhub/drawer/widgets/drawer_header.dart';
 import 'package:foodhub/features/personalization/screens/address/address.dart';
+import 'package:foodhub/features/personalization/screens/my_order/my_order.dart';
 import 'package:foodhub/features/personalization/screens/profile/profile.dart';
 import 'package:foodhub/features/shop/screens/payment/payment.dart';
 import 'package:foodhub/features/shop/screens/wishlist/wishlist.dart';
@@ -53,7 +54,7 @@ class MainDrawer extends StatelessWidget {
             ],
           ),
           DrawerContainer(
-            height: 150,
+            height: 250,
             children: [
               PDrawerElement(
                 onTap: () {
@@ -69,18 +70,39 @@ class MainDrawer extends StatelessWidget {
                 onTap: () {
                   controller.changeIndex(3);
                   Get.back();
-                  Get.to(()=> controller.screens[controller.selectedIndex.value]);
+                  Get.to(
+                      () => controller.screens[controller.selectedIndex.value]);
+                },
+                image: PImages.cartIconIcon,
+                title: "My Orders",
+              ),
+              PDrawerElement(
+                onTap: () {
+                  controller.changeIndex(4);
+                  Get.back();
+                  Get.to(
+                      () => controller.screens[controller.selectedIndex.value]);
                 },
                 image: PImages.paymentIcon,
                 title: "Payment Method",
               ),
               PDrawerElement(
                 onTap: () {
-                  controller.changeIndex(4);
+                  controller.changeIndex(5);
                   Get.back();
                 },
                 image: PImages.settingIcon,
                 title: "Settings",
+              ),
+              PDrawerElement(
+                onTap: () {
+                  controller.changeIndex(6);
+                  Get.back();
+                  // Get.to(
+                  //     () => controller.screens[controller.selectedIndex.value]);
+                },
+                image: PImages.notificationIcon,
+                title: "Notification",
               ),
             ],
           ),
@@ -91,7 +113,7 @@ class MainDrawer extends StatelessWidget {
                 image: PImages.logoutIcon,
                 title: "Log out",
                 onTap: () {
-                  controller.changeIndex(5);
+                  controller.changeIndex(7);
                   // Log out
                 },
               ),
@@ -115,6 +137,7 @@ class MainDrawerController extends GetxController {
     const ProfileScreen(),
     const UserAddressScreen(),
     const WishlistScreen(),
-   const  PaymentScreen(),
+    const MyOrder(),
+    const PaymentScreen(isShowBottomMenu: false),
   ];
 }

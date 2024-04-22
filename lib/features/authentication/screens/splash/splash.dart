@@ -4,8 +4,15 @@ import 'package:foodhub/utils/constants/image_strings.dart';
 import 'package:foodhub/utils/constants/sizes.dart';
 import 'package:foodhub/utils/device/device_utility.dart';
 
-class SplashScreen extends StatelessWidget {
+
+class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
+
+  @override
+  State<SplashScreen> createState() => _SplashScreenState();
+}
+
+class _SplashScreenState extends State<SplashScreen> {
 
   @override
   Widget build(BuildContext context) {
@@ -54,4 +61,3 @@ class SplashScreen extends StatelessWidget {
     );
   }
 }
-

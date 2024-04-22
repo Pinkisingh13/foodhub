@@ -37,7 +37,7 @@ class ProfileScreen extends StatelessWidget {
             ),
             PProfileMenu(
               title: PTexts.phoneNo,
-              value: "8402399876",
+              value: "8453******",
               onPressed: (){},
             ),
             const SizedBox(

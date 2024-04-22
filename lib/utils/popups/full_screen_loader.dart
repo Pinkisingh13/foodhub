@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:foodhub/common/widgets/loaders/animation_loader.dart';
 import 'package:get/get.dart';
 
 import '../constants/colors.dart';
@@ -24,14 +25,15 @@ class PFullScreenLoader {
               : PColors.white,
           width: double.infinity,
           height: double.infinity,
-          child: const Column(
-            children: [
-              SizedBox(
-                height: 250,
-              ),
-              // PAnimationLoaderWidget(text: text, animation: animation),
-            ],
-          ),
+          child:  Column(
+              children: [
+                const SizedBox(
+                  height: 250,
+                ),
+                PAnimationLoaderWidget(text: text, animation: animation),
+              ],
+            ),
+          
         ),
       ),
     );

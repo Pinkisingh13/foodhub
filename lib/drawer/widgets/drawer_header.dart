@@ -16,7 +16,7 @@ class DrawerHeaderText extends StatelessWidget {
           width: 100,
           child: CircleAvatar(
             child: Image(
-              image: AssetImage(PImages.appLogo),
+              image: AssetImage(PImages.user),
             ),
           ),
         ),

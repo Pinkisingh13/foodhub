@@ -4,6 +4,7 @@ import 'package:foodhub/common/widgets/login_signup/titleandsubtitle.dart';
 
 import 'package:foodhub/utils/constants/sizes.dart';
 import 'package:foodhub/utils/constants/text_strings.dart';
+
 import 'widgets/signup_form.dart';
 import '../../../../common/widgets/login_signup/social_buttons.dart';
 

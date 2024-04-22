@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:foodhub/features/shop/screens/food_view/food_view.dart';
 import 'package:foodhub/utils/constants/colors.dart';
 import 'package:foodhub/utils/constants/sizes.dart';
-import 'package:get/get.dart';
-
 import '../../../models/restaurant/restaurant.dart';
 
 class PAllFoodList extends StatelessWidget {
@@ -24,11 +22,19 @@ class PAllFoodList extends StatelessWidget {
             children: [
               InkWell(
                 onTap: () {
-                  Get.to(
-                    () => FoodDetailScreen(
-                      foodmodel: e,
-                    ),
+                  showModalBottomSheet(
+                    useSafeArea: true,
+                    
+                    context: context,
+                    builder: (context) {
+                      return FoodDetailScreen(foodmodel: e,);
+                    },
                   );
+                  // Get.to(
+                  //   () => FoodDetailScreen(
+                  //     foodmodel: e,
+                  //   ),
+                  // );
                 },
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -98,28 +104,16 @@ class PAllFoodList extends StatelessWidget {
                               height: 38,
                               width: 90,
                               decoration: BoxDecoration(
-                                boxShadow: const [
-                                  BoxShadow(
-                                    spreadRadius: 2,
-                                    blurStyle: BlurStyle.inner,
-                                    color: PColors.grey,
-                                    blurRadius: 4,
-                                  ),
-                                  BoxShadow(
-                                      blurStyle: BlurStyle.inner,
-                                      color: PColors.grey,
-                                      blurRadius: 4),
-                                ],
                                 color: PColors.white,
                                 borderRadius: BorderRadius.circular(10),
                               ),
                               child: Text(
-                                "Add",
+                                "ADD",
                                 style: Theme.of(context)
                                     .textTheme
                                     .bodyLarge!
                                     .copyWith(
-                                        color: PColors.tertiary,
+                                        color: PColors.accent,
                                         fontWeight: FontWeight.w800),
                               ),
                             ),

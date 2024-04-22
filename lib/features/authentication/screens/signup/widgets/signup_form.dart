@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:foodhub/features/authentication/controllers/signup/signup_controller.dart';
 import 'package:foodhub/features/authentication/screens/login/login.dart';
-import 'package:foodhub/features/authentication/screens/signup/verify_email.dart';
+
 import 'package:foodhub/utils/constants/sizes.dart';
 import 'package:foodhub/utils/constants/text_strings.dart';
 import 'package:foodhub/utils/helpers/helper_functions.dart';
+import 'package:foodhub/utils/validators/validation.dart';
 import 'package:get/get.dart';
+import 'package:iconsax/iconsax.dart';
 
 class PSignupForm extends StatelessWidget {
   const PSignupForm({
@@ -13,14 +16,16 @@ class PSignupForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(SignupController());
     return Form(
+      key: controller.signupFormKey,
       child: Column(
         children: [
-          
           // Full Name
           TextFormField(
-            // validator: (value) => PValidator.validateEmptyText(PTexts.fullName, value),
-            // controller: ,
+            validator: (value) =>
+                PValidator.validateEmptyText(PTexts.fullName, value),
+            controller: controller.fullName,
             expands: false,
             decoration: const InputDecoration(
               labelText: PTexts.fullName,
@@ -30,10 +35,11 @@ class PSignupForm extends StatelessWidget {
           const SizedBox(
             height: PSizes.spaceBtwInputFields,
           ),
+
           // Phone number
           TextFormField(
-            // validator: (value) => PValidator.validatePhoneNumber(value),
-            // controller: ,
+            validator: (value) => PValidator.validatePhoneNumber(value),
+            controller: controller.phoneNumber,
             expands: false,
             decoration: const InputDecoration(
               labelText: PTexts.phoneNo,
@@ -46,8 +52,8 @@ class PSignupForm extends StatelessWidget {
 
           // Email
           TextFormField(
-            // validator: (value) => PValidator.validateEmail(value),
-            // controller: ,
+            validator: (value) => PValidator.validateEmail(value),
+            controller: controller.email,
             expands: false,
             decoration: const InputDecoration(
               labelText: PTexts.email,
@@ -59,23 +65,23 @@ class PSignupForm extends StatelessWidget {
           ),
 
           // Password
-          TextFormField(
-            // controller: controller.password,
-            // validator: (value) => PValidator.validatePassword(value),
-            // obscureText: controller.togglePassword.value,
-            decoration: InputDecoration(
-              labelText: PTexts.password,
-              prefixIcon: const Icon(Icons.password),
-              suffixIcon: IconButton(
-                // onPressed: () => controller.togglePassword.value =
-                // !controller.togglePassword.value,
-                icon: const Icon(
-                  // controller.togglePassword.value
-                  //     ? Iconsax.eye_slash
-                  //     : Iconsax.eye,
-                  Icons.remove_red_eye,
+          Obx(
+            () => TextFormField(
+              controller: controller.password,
+              validator: (value) => PValidator.validatePassword(value),
+              obscureText: controller.togglePassword.value,
+              decoration: InputDecoration(
+                labelText: PTexts.password,
+                prefixIcon: const Icon(Icons.password),
+                suffixIcon: IconButton(
+                  onPressed: () => controller.togglePassword.value =
+                      !controller.togglePassword.value,
+                  icon: Icon(
+                    controller.togglePassword.value
+                        ? Iconsax.eye_slash
+                        : Iconsax.eye,
+                  ),
                 ),
-                onPressed: () {},
               ),
             ),
           ),
@@ -88,7 +94,8 @@ class PSignupForm extends StatelessWidget {
             width: PHelperFunctions.screenWidth() / 1.3,
             child: ElevatedButton(
               onPressed: () {
-                Get.to(() => const VerifyEmailScreen());
+                controller.signup();
+                // Get.to(() => const VerifyEmailScreen());
               },
               child: const Text(PTexts.signupTitle),
             ),

@@ -265,7 +265,7 @@ class FoodModel {
     required this.foodName,
     required this.price,
     required this.description,
-    required this.image,
+    required this.image, 
   });
 }
 

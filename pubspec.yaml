@@ -43,6 +43,10 @@ dependencies:
   lottie: ^3.1.0
   http: ^1.2.1
   google_fonts: ^6.2.1
+  firebase_core: ^2.30.0
+  get_storage: ^2.1.1
+  firebase_auth: ^4.19.2
+  cloud_firestore: ^4.17.0
 
 
 dev_dependencies:
@@ -80,8 +84,10 @@ flutter:
     - assets/images/Jahnabee/
     - assets/images/ingridents/
     - assets/images/Payment/
+    - assets/logos/user.png
     - assets/logos/
     - assets/animation/
+    - assets/animation/141594-animation-of-docer.json
     - assets/images/icons/
 
 

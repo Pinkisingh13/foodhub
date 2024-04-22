@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:foodhub/features/shop/models/restaurant/restaurant.dart';
-import 'package:foodhub/features/shop/screens/home/widgets/cliprect_container_image.dart';
+import 'package:foodhub/common/widgets/container/cliprect_container_image.dart';
 import 'package:foodhub/features/shop/screens/home/widgets/restaurant_details/rating_time.dart';
 import 'package:foodhub/features/shop/screens/restaurant_view/restaurant_details.dart';
 import 'package:foodhub/utils/constants/sizes.dart';

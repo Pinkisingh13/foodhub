@@ -196,7 +196,11 @@ class PImages {
       "assets/images/reviews/review_profile_image_3.jpeg";
 
   //Profile
-  static const String user = "assets/images/content/user.png";
+  static const String user = "assets/logos/user.png";
+
+  // Animation
+    static String docerAnimation =
+      "assets/animation/141594-animation-of-docer.json";
 
   // -- Payment Methods
   static const String noMasterCard =

@@ -1,12 +1,11 @@
-
+import 'package:foodhub/utils/helpers/network_manager.dart';
 import 'package:get/get.dart';
-import '../features/authentication/controllers/splash/splash.dart';
+
 
 class GeneralBindings extends Bindings {
   @override
   void dependencies() {
-    Get.put(SplashController());
-
-
+    // Get.put(SplashController());
+    Get.put(NetworkManager());
   }
 }
