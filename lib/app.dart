@@ -13,8 +13,8 @@ class MyApp extends StatelessWidget {
       initialBinding: GeneralBindings(),
       title: "FoodHub",
       theme: PAppTheme.lightTheme,
-       themeMode: ThemeMode.light,
-       home: const SplashScreen(),
+      themeMode: ThemeMode.light,
+      home: const SplashScreen(),
     );
   }
 }

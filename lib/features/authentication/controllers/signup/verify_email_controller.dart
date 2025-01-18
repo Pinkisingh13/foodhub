@@ -8,7 +8,6 @@ import 'package:foodhub/utils/popups/loaders.dart';
 import 'package:get/get.dart';
 
 class VerifyEmailController extends GetxController {
-
   /// Send email whenever verify email screen appears & set Timer for auto redirect
   @override
   void onInit() {
@@ -39,10 +38,10 @@ class VerifyEmailController extends GetxController {
       if (user?.emailVerified ?? false) {
         timer.cancel();
         Get.off(() => SuccessScreen(
-            image: PImages.successfullyRegisterAnimation,
-            title: PTexts.yourAccountCreatedTitle,
-            subTitle: PTexts.yourAccountCreatedSubTitle,
-            onPressed: () => AuthenticationRepo.instance.screenRedirect(),
+              image: PImages.successfullyRegisterAnimation,
+              title: PTexts.yourAccountCreatedTitle,
+              subTitle: PTexts.yourAccountCreatedSubTitle,
+              onPressed: () => AuthenticationRepo.instance.screenRedirect(),
             ));
       }
     });
@@ -52,13 +51,14 @@ class VerifyEmailController extends GetxController {
   checkEmailVerificationStatusManually() {
     final currentUser = FirebaseAuth.instance.currentUser;
     if (currentUser != null && currentUser.emailVerified) {
-      Get.off(() => SuccessScreen(
+      Get.off(
+        () => SuccessScreen(
           image: PImages.successfullyRegisterAnimation,
           title: PTexts.yourAccountCreatedTitle,
           subTitle: PTexts.yourAccountCreatedSubTitle,
-          onPressed: () =>
-            AuthenticationRepo.instance.screenRedirect(),
-          ));
+          onPressed: () => AuthenticationRepo.instance.screenRedirect(),
+        ),
+      );
     }
   }
 }

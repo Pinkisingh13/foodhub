@@ -13,7 +13,7 @@ import 'widgets/text_theme.dart';
 class PAppTheme {
   PAppTheme._();
 
-  static ThemeData lightTheme = ThemeData(
+  static ThemeData lightTheme = ThemeData( 
     useMaterial3: true,
     disabledColor: PColors.lightGrey,
     brightness: Brightness.light,

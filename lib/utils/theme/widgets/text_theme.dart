@@ -20,6 +20,7 @@ class PTextTheme {
     bodySmall: const TextStyle().copyWith(fontSize: 14.0, fontWeight: FontWeight.w500, color: PColors.dark.withOpacity(0.5)),
 
     labelLarge: const TextStyle().copyWith(fontSize: 12.0, fontWeight: FontWeight.normal, color: PColors.dark),
+    // ignore: deprecated_member_use
     labelMedium: const TextStyle().copyWith(fontSize: 12.0, fontWeight: FontWeight.normal, color: PColors.dark.withOpacity(0.5)),
   );
 }
